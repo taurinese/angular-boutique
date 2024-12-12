@@ -1,0 +1,188 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "img": "pic01.png",
+      "alt": "Chaise moderne en bois",
+      "titre": "Chaise Scandinave",
+      "description": "Chaise en bois de hêtre avec un design moderne et épuré, parfaite pour les salons minimalistes.",
+      "price": 59.99,
+      "quantity": 12
+    },
+    {
+      "id": 2,
+      "img": "pic02.png",
+      "alt": "Table en verre trempé",
+      "titre": "Table de Salon",
+      "description": "Table basse avec un plateau en verre trempé et pieds en acier inoxydable.",
+      "price": 129.99,
+      "quantity": 5
+    },
+    {
+      "id": 3,
+      "img": "pic03.png",
+      "alt": "Lampe de bureau LED",
+      "titre": "Lampe de Bureau",
+      "description": "Lampe LED à intensité réglable, idéale pour travailler ou lire confortablement.",
+      "price": 24.99,
+      "quantity": 20
+    },
+    {
+      "id": 4,
+      "img": "pic01.png",
+      "alt": "Coussin décoratif jaune",
+      "titre": "Coussin Soleil",
+      "description": "Coussin moelleux aux couleurs vives, idéal pour égayer votre canapé ou lit.",
+      "price": 14.49,
+      "quantity": 30
+    },
+    {
+      "id": 5,
+      "img": "pic02.png",
+      "alt": "Ensemble de couverts dorés",
+      "titre": "Couverts Luxe",
+      "description": "Set de 24 couverts en acier inoxydable avec une finition dorée élégante.",
+      "price": 89.99,
+      "quantity": 8
+    },
+    {
+      "id": 6,
+      "img": "pic03.png",
+      "alt": "Étagère murale en bois clair",
+      "titre": "Étagère Murale",
+      "description": "Étagère en bois massif pour ranger vos livres, plantes ou objets de décoration.",
+      "price": 39.99,
+      "quantity": 10
+    },
+    {
+      "id": 7,
+      "img": "pic01.png",
+      "alt": "Mug en céramique blanche",
+      "titre": "Mug Minimaliste",
+      "description": "Mug en céramique blanche avec un design épuré pour vos boissons chaudes préférées.",
+      "price": 9.99,
+      "quantity": 50
+    },
+    {
+      "id": 8,
+      "img": "pic02.png",
+      "alt": "Plante verte artificielle",
+      "titre": "Plante Décorative",
+      "description": "Plante artificielle réaliste, parfaite pour ajouter une touche de verdure à votre intérieur.",
+      "price": 19.99,
+      "quantity": 15
+    },
+    {
+      "id": 9,
+      "img": "pic03.png",
+      "alt": "Tapis berbère coloré",
+      "titre": "Tapis Marocain",
+      "description": "Tapis berbère tissé à la main avec des motifs traditionnels et des couleurs vibrantes.",
+      "price": 249.99,
+      "quantity": 3
+    },
+    {
+      "id": 10,
+      "img": "pic01.png",
+      "alt": "Boîte de rangement en métal",
+      "titre": "Boîte de Rangement",
+      "description": "Boîte en métal robuste avec un couvercle hermétique, idéale pour ranger vos outils ou accessoires.",
+      "price": 34.99,
+      "quantity": 25
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Trucs"
+    }
+  ],
+  "users": [
+    {
+      "email": "enzo@enzo.enzo",
+      "password": "$2a$10$0w4C0/EtQr/SStuwjk2nOegxBendMQdU4jm3LCRtZcPYGmr/Do9/W",
+      "id": 1,
+      "username": "enzod"
+    },
+    {
+      "email": "enzo2@enzo.enzo",
+      "password": "$2a$10$tT.Fxdr95OEkelCk7yku/eEfb0RhFXfBVMnhstmTTyZt9YjpSQgCO",
+      "id": 2,
+      "username": "enzo2"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "products": [
+        {
+          "id": 1,
+          "img": "pic01.png",
+          "alt": "Chaise moderne en bois",
+          "titre": "Chaise Scandinave",
+          "description": "Chaise en bois de hêtre avec un design moderne et épuré, parfaite pour les salons minimalistes.",
+          "price": 59.99,
+          "quantity": 12
+        }
+      ],
+      "total": 59.99,
+      "date": "2024-12-12T14:16:49.512Z",
+      "user": {
+        "email": "enzo@enzo.enzo",
+        "id": 1,
+        "username": "enzod"
+      }
+    },
+    {
+      "id": 2,
+      "products": [
+        {
+          "id": 1,
+          "img": "pic01.png",
+          "alt": "Chaise moderne en bois",
+          "titre": "Chaise Scandinave",
+          "description": "Chaise en bois de hêtre avec un design moderne et épuré, parfaite pour les salons minimalistes.",
+          "price": 59.99,
+          "quantity": 12
+        }
+      ],
+      "total": 59.99,
+      "date": "2024-12-12T14:18:33.441Z",
+      "user": {
+        "email": "enzo@enzo.enzo",
+        "id": 1,
+        "username": "enzod"
+      }
+    },
+    {
+      "id": 3,
+      "products": [
+        {
+          "id": 1,
+          "img": "pic01.png",
+          "alt": "Chaise moderne en bois",
+          "titre": "Chaise Scandinave",
+          "description": "Chaise en bois de hêtre avec un design moderne et épuré, parfaite pour les salons minimalistes.",
+          "price": 59.99,
+          "quantity": 12
+        },
+        {
+          "id": 3,
+          "img": "pic03.png",
+          "alt": "Lampe de bureau LED",
+          "titre": "Lampe de Bureau",
+          "description": "Lampe LED à intensité réglable, idéale pour travailler ou lire confortablement.",
+          "price": 24.99,
+          "quantity": 20
+        }
+      ],
+      "total": 84.98,
+      "date": "2024-12-12T15:43:54.451Z",
+      "user": {
+        "email": "enzo@enzo.enzo",
+        "id": 1,
+        "username": "enzod"
+      }
+    }
+  ]
+}

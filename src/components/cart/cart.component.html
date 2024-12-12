@@ -1,0 +1,51 @@
+<div class="w-full flex justify-between px-48 gap-20">
+  @if(items.length > 0) {
+    <main class="w-2/3 flex flex-col gap-y-4">
+      @for (item of items; track $index){
+        <div class="border border-slate-100 rounded-lg p-8 grid grid-rows-1 grid-cols-8">
+          <img [src]="'assets/images/' + item.img" [alt]="item.alt" class="w-48 rounded shadow col-span-1">
+          <div class="col-span-5 px-4 flex flex-col justify-between items-start">
+            <!-- TODO : créer une view de chaque produit ? remplacer editor par show -->
+            <a [routerLink]="'/editor/' + item.id" class="font-medium text-xl hover:underline hover:underline-offset-2">{{item.titre}}</a>
+            <button (click)="delete(item)" type="button" class="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500">
+              <svg class="me-1.5 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+              </svg>
+              Remove
+            </button>
+          </div>
+          <div class="col-span-1 text-center">
+            quantity
+          </div>
+          <div class="col-span-1 text-end">
+            {{item.price}} €
+          </div>
+        </div>
+      }
+    </main>
+    <aside class="w-1/4 border border-slate-100 rounded-lg p-8">
+      <p class="font-semibold text-2xl mb-8">Order summary</p>
+      <div class="space-y-1 mb-2 text-slate-500">
+        <p>Prix de base : {{Math.round((cartService.getTotalPrice() * 0.8 + Number.EPSILON) * 100) / 100}}€ </p>
+        <p>TVA (20%) : {{Math.round((cartService.getTotalPrice() * 0.2 + Number.EPSILON) * 100) / 100}} €</p>
+      </div>
+      <p class="font-semibold py-2 border-t">Total : {{cartService.getTotalPrice()}} €</p>
+      <button (click)="completeOrder()" type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Order</button>
+      <div class="flex items-center justify-center gap-2">
+        <span class="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>
+        <a routerLink="/home" class="inline-flex items-center gap-2 text-sm font-medium text-blue-800 underline hover:no-underline dark:text-primary-500">
+          Continue Shopping
+          <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
+          </svg>
+        </a>
+      </div>
+
+    </aside>
+  } @else {
+    <div class="w-full flex justify-center items-center">
+      <p class="text-2xl font-semibold text-gray-500">Your cart is empty</p>
+    </div>
+  }
+
+</div>

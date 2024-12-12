@@ -1,0 +1,31 @@
+<div class="min-h-full">
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center justify-between w-full">
+          <div class="shrink-0">
+            <img class="size-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+          </div>
+          <div class="md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a routerLink="home" [class]="currentRoute == '/home' ? 'bg-gray-900 text-white' : 'text-gray-300'" class="rounded-md px-3 py-2 text-sm font-medium" >Home</a>
+              <!--<a routerLink="categories" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Categories</a>-->
+              <a routerLink="products" [class]="currentRoute == '/products' ? 'bg-gray-900 text-white' : 'text-gray-300'" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Products</a>
+              <a routerLink="editor/0" [class]="currentRoute.startsWith('/editor/') ? 'bg-gray-900 text-white' : 'text-gray-300'" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Editeur</a>
+            </div>
+          </div>
+
+          <div class="shrink-0">
+            @if(!auth.isLogged){
+                <a routerLink="login" [class]="currentRoute == '/login' ? 'bg-gray-900 text-white' : 'text-gray-300'" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
+                <a routerLink="register" [class]="currentRoute == '/register' ? 'bg-gray-900 text-white' : 'text-gray-300'" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Register</a>
+            } @else {
+                <a routerLink="me" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">{{auth.currentName}}</a>
+                <button (click)="auth.logout()" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Logout</button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
