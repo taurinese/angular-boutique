@@ -17,8 +17,8 @@ export class LoginComponent {
   private router = inject(Router)
 
   credentials: Credentials = {
-    email: "enzo@enzo.enzo",
-    password: "enzo"
+    email: "",
+    password: ""
   };
 
   onSubmit(form: HTMLFormElement): void {

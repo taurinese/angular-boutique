@@ -6,6 +6,7 @@ import {Product} from '../../entities/product';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {StepComponent, StepperComponent} from 'tw-stepper';
 import {ProductCardComponent} from '../../components/product-card/product-card.component';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +25,7 @@ export class HomeComponent {
   products = inject(ActivatedRoute).data.pipe(map(({products}) => products))
   productAdded: Product | null = null
   clickOnCloseAlert: boolean = false
+  protected authService = inject(AuthService)
 
   handleProductAdded(product: Product) {
     this.productAdded = product;

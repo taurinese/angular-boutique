@@ -4,6 +4,7 @@ import {ProductService} from '../../services/product.service';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {map, Observable} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-products',
@@ -17,6 +18,7 @@ import {AsyncPipe} from '@angular/common';
 })
 export class ProductsComponent {
   protected service = inject(ProductService)
+  protected authService = inject(AuthService)
   private route = inject(ActivatedRoute)
   private router: Router = inject(Router)
 

@@ -3,6 +3,7 @@ import {inject} from '@angular/core';
 import {ProductService} from '../services/product.service';
 import {catchError, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {authGuard} from '../tools/auth.guard';
 
 export const routes: Routes = [
   {
@@ -24,10 +25,10 @@ export const routes: Routes = [
       products: () => inject(ProductService).all()
     }
   },
-  {
+/*  {
     path: "categories",
     loadComponent: () => import("../views/categories/categories.component").then(m => m.CategoriesComponent)
-  },
+  },*/
   {
     path: "editor/:id",
     loadComponent: () => import("../views/editor/editor.component").then(m => m.EditorComponent),
@@ -36,7 +37,8 @@ export const routes: Routes = [
         const id = +(route.paramMap.get('id') || 0)
         return id ? inject(ProductService).byId(id).pipe(catchError(() => of(undefined))) : undefined
       }
-    }
+    },
+    canMatch: [authGuard]
   },
   {
     path: "login",
@@ -48,7 +50,8 @@ export const routes: Routes = [
   },
   {
     path: "me",
-    loadComponent: () => import("../views/account/account.component").then(m => m.AccountComponent)
+    loadComponent: () => import("../views/account/account.component").then(m => m.AccountComponent),
+    canMatch: [authGuard]
   },
   {
     path: "**",

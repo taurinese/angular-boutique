@@ -22,7 +22,7 @@
       @for (product of products | async; track $index) {
         <app-step>
           <div class="h-full w-full flex justify-center items-center">
-            <app-product-card [product]="product" [actions]="true" (productAdded)="handleProductAdded(product)" />
+            <app-product-card [product]="product" [actions]="authService.isLogged" (productAdded)="handleProductAdded(product)" />
           </div>
         </app-step>
       }

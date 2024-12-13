@@ -1,7 +1,10 @@
-<div>
-  Actions:
-  <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" routerLink="/editor/0">Ajouter</button>
-</div>
+@if(authService.isLogged){
+  <div>
+    Actions:
+    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" routerLink="/editor/0">Ajouter</button>
+  </div>
+}
+
 <div class="relative overflow-x-auto">
   <table class="w-full text-sm text-left rtl:text-right text-gray-500 table-auto">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -26,7 +29,15 @@
           <td class="px-6 py-4">{{product.img}}</td>
           <td class="px-6 py-4">{{product.price}}</td>
           <td class="px-6 py-4">{{product.quantity}}</td>
-          <td class="px-6 py-4 flex gap-4"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" [routerLink]="'/editor/' + product.id">edit</button>  <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded" (click)="delete(product.id)">delete</button></td>
+          <td class="px-6 py-4 flex gap-4">
+            @if(authService.isLogged){
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" [routerLink]="'/editor/' + product.id">edit</button>
+              <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded" (click)="delete(product.id)">delete</button>
+            } @else {
+              <p>No actions available</p>
+            }
+
+          </td>
         </tr>
       } @empty {
         <p>Aucun produit</p>

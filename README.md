@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
 
+## Fonctionnalités
+
+- Login / Register
+- Show products stored in DB with stepper or table in products page
+- When authenticated:
+  - CRUD with products
+  - CRUD with cart (stored in sessionStorage)
+  - Create new orders and show them in /me (click on username to see it)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

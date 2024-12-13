@@ -109,6 +109,12 @@
       "password": "$2a$10$tT.Fxdr95OEkelCk7yku/eEfb0RhFXfBVMnhstmTTyZt9YjpSQgCO",
       "id": 2,
       "username": "enzo2"
+    },
+    {
+      "email": "test@test.test",
+      "password": "$2a$10$hmn3LYh0MQIuTKA7nClxKevDCkYIkCx/OVCYMcMa2NfcaTxYJL/QO",
+      "id": 3,
+      "username": "test"
     }
   ],
   "orders": [
@@ -182,6 +188,36 @@
         "email": "enzo@enzo.enzo",
         "id": 1,
         "username": "enzod"
+      }
+    },
+    {
+      "id": 4,
+      "products": [
+        {
+          "id": 1,
+          "img": "pic01.png",
+          "alt": "Chaise moderne en bois",
+          "titre": "Chaise Scandinave",
+          "description": "Chaise en bois de hêtre avec un design moderne et épuré, parfaite pour les salons minimalistes.",
+          "price": 59.99,
+          "quantity": 12
+        },
+        {
+          "id": 3,
+          "img": "pic03.png",
+          "alt": "Lampe de bureau LED",
+          "titre": "Lampe de Bureau",
+          "description": "Lampe LED à intensité réglable, idéale pour travailler ou lire confortablement.",
+          "price": 24.99,
+          "quantity": 20
+        }
+      ],
+      "total": 84.98,
+      "date": "2024-12-13T08:47:36.423Z",
+      "user": {
+        "email": "test@test.test",
+        "id": 3,
+        "username": "test"
       }
     }
   ]
